@@ -24,7 +24,7 @@ async def warn(ctx, user: discord.Member, *, reason: str = "No reason provided")
         return
     
     with open("cases_number.json", "r") as f:
-    data = json.load(f)
+        data = json.load(f)
 
     if "cases" not in data:
         data["cases"] = 0
