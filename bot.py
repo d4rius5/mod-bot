@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 from dotenv import load_dotenv
+import json
 
 # load .env
 load_dotenv()
@@ -21,7 +22,7 @@ async def on_ready():
 async def warn(ctx, user: discord.Member, *, reason: str = "No reason provided"):
     if reason == "No reason provided":
         return
-
+    
     
 
 bot.run(TOKEN)
