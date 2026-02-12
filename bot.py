@@ -23,6 +23,16 @@ async def warn(ctx, user: discord.Member, *, reason: str = "No reason provided")
     if reason == "No reason provided":
         return
     
-    
+    with open("cases_number.json", "r") as f:
+    data = json.load(f)
+
+    if "cases" not in data:
+        data["cases"] = 0
+
+    data["cases"] += 1
+
+    with open("cases_number.json", "w") as f:
+        json.dump(data, f, indent=4)
+
 
 bot.run(TOKEN)
